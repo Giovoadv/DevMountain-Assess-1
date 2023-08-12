@@ -34,5 +34,14 @@ img{
     float: right
 }
 .headerTwo{
-    float: center;
+    display: flex;
+} 
+
+.item{
+    margin-right: 10px;
+}
+
+.headerOne{
+    display: flex;
+    align-items: center;
 }

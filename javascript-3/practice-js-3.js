@@ -46,7 +46,7 @@ function addItem(item){
 
 //CODE HERE
 function removeItem(index){
-    groceries.splice(index);
+    groceries.splice(index, 1);
     displayData();
 }
 

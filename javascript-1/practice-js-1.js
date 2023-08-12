@@ -53,10 +53,10 @@ function trueOrFalse(data){
 
 //CODE HERE
 function oddChecker(num){
-  if (num % 2 == 1){
-    return "the number is odd"
-  }else {
+  if (num % 2 == 0){
     return "the number is even"
+  }else {
+    return "the number is odd"
   }
 }
 
@@ -72,7 +72,7 @@ function oddChecker(num){
 function iLove(name, love){
   return `${name} loves ${love}`;
 }
-iLove(nameParam, nameParam);
+iLove("Bryan", "Skateboarding");
 
 //////////////////PROBLEM 8////////////////////
 /* Create a copy of the faveColors array called 'colorCopy' using the slice method. */
@@ -97,7 +97,7 @@ colorCopy.push("Blue");
 const numbers = [1, 2, 3, 4, 5];
 
 //CODE HERE
-const middleNums = [2, 3, 4];
+const middleNums = numbers.slice(1,4);
 
 //////////////////PROBLEM 11////////////////////
 /*
@@ -139,8 +139,8 @@ let me = {
 
 // CODE HERE
 function bigOrSmall(arr){
-  let answers = [1,2,3,120];
-  for(i = 0; i < answers.length; i++){
+  let answers = [];
+  for(i = 0; i < arr.length; i++){
     if(arr[i] > 100) {
       answers.push("big");
     }else if(arr[i] <= 100){
@@ -149,6 +149,7 @@ function bigOrSmall(arr){
   }
   return answers;
 }
+console.log(bigOrSmall([2,5,42,105,50]));
 
 //////////////////PROBLEM 13////////////////////
 /* 
@@ -165,10 +166,12 @@ function bigOrSmall(arr){
 function arrayReverser(arr){
   let reversed = [];
   for(let i = arr.length - 1; i >= 0; i-- ){
-    reversed[i];
-    return reversed;
+    reversed.push(arr[i]);
+    
   }
+  return reversed;
 }
+
 
 
 //////////////////PROBLEM 14////////////////////
@@ -198,13 +201,13 @@ function secondFunction() {
 let globalScope = ['global'];
 
 //This array should contain the variable names (as strings) accessible in the firstFunction function.
-let firstFunctionScope = ['inner', 'outer'];
+let firstFunctionScope = ['global','outer'];
 
 //This array should contain the variable names (as strings) accessible in the innerFunction function.
-let innerFunctionScope = ['inner'];
+let innerFunctionScope = ['global', 'outer', 'inner'];
 
 //This array should contain the variable names (as strings) accessible in the secondFunction function.
-let secondFunctionScope = ['functional'];
+let secondFunctionScope = ['global', 'functional'];
 
 //////////////////PROBLEM 15////////////////////
 /* 
@@ -289,6 +292,6 @@ function carFactory(make, model, year){
   }else {
     carDetails.isNew = false;
   }
-  console.log(carDetails)
+  return carDetails;
 }
 carFactory("Toyota", "Tacoma", "2024");
